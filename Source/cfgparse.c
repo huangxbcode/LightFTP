@@ -20,6 +20,7 @@ char *skip_comments_and_blanks(char *p)
 
 		while (
 				(*p == ' ') ||
+				(*p == '\r') ||
 				(*p == '\n')
 				)
 			++p;
@@ -154,6 +155,7 @@ int config_parse(
 
 					while (
 							(*p != '\n') &&
+							(*p != '\r') &&
 							(*p != 0)
 							)
 					{
